@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Wonderlust Travel- Destination Majorca</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
+        <div class="skip-link">Skip to <a href="#main-content">main content</a></div>
+        <div class="skip-link">Skip to <a href="#plan-your-trip">plan your trip</a></div>
+        <div class="skip-link">Skip to <a href="#testimonials">testimonials</a></div>
+        <div class="skip-link">Skip to <a href="#about-your-destination">about your destination</a></div>
+        <div class="skip-link">Skip to <a href="#contact-us">contact us</a></div>
         <h1>Destination Majorca</h1>
         <p>Let Wonderlust Travel help you plan the trip of your dreams!</p>
         <p>Specializing in unforgettable experiences, we offer curated trips to the breathtaking island of Majorca, a hidden gem in the Mediterranean. Whether you crave sun-drenched beaches, charming villages, or thrilling outdoor adventures, our expert team will craft the perfect itinerary tailored just for you.</p>
@@ -28,7 +33,7 @@
         </ul>
     </nav>
     <main>
-        <article>
+        <article id="main-content">
             <h2>Majorca</h2>
             <section id="intro">
 
@@ -39,9 +44,14 @@
                     images/majorca-beach-square-s.jpg
                     images/majorca-beach-vertical-m.jpg
                     images/majorca-beach-horizontal-l.jpg
-
                     404px, 920px, 1280px
                     -->
+                    <picture>
+                        <source media="(max-width: 404px)" srcset="images/majorca-beach-square-s.jpg">
+                        <source media="(max-width: 920px)" srcset="images/majorca-beach-vertical-m.jpg">
+                        <source media="(min-width: 1280px)" srcset="images/majorca-beach-horizontal-l.jpg">
+                        <img src="images/majorca-beach-square-s.jpg" alt="Majorca Beach">
+                    </picture>
                     <small>Photo by <a href="https://unsplash.com/@charliefirth?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Charlie Firth</a> on <a href="https://unsplash.com/photos/sea-waves-crashing-on-shore-during-sunset-HQJIQjXq1HI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></small>
                 </div>
             </section>
@@ -95,6 +105,15 @@
                         images/miranda-blake-M.png 920w
                         images/miranda-blake-L.png 1280w
                     -->
+                        <img
+                        alt="blonde woman with sunglasses looking to the side in front of a beach"
+                        srcset="
+                        images/miranda-blake-S.png 404w,
+                        images/miranda-blake-M.png 920w,
+                        images/miranda-blake-L.png 1280w
+                        "
+                        sizes="(width < 404px) 404px, (width < 920px) 920px, 1280px"
+                        src="images/miranda-blake-L.png">
                         <div>
                         <h4>Miranda Blake</h4>
                         <dl>
@@ -111,6 +130,15 @@
                         images/max-winter-M.png 920w
                         images/max-winter-L.png 1280w
                     -->
+                        <img
+                        alt="man with curly hair and a beard looking at the camera"
+                        srcset="
+                        images/max-winter-S.png 404w,
+                        images/max-winter-M.png 920w,
+                        images/max-winter-L.png 1280w
+                        "
+                        sizes="(width < 404px) 404px, (width < 920px) 920px, 1280px"
+                        src="images/max-winter-L.png">
                         <div>
                         <h4>Max Winter</h4>
                         <dl>
@@ -127,6 +155,15 @@
                         images/ines-villegoes-M.png 920w
                         images/ines-villegoes-L.png 1280w 
                     -->
+                        <img
+                        alt="woman with brown hair and a police vest looking to the side"
+                        srcset="
+                        images/ines-villegoes-S.png 404w,
+                        images/ines-villegoes-M.png 920w,
+                        images/ines-villegoes-L.png 1280w
+                        "
+                        sizes="(width < 404px) 404px, (width < 920px) 920px, 1280px"
+                        src="images/ines-villegoes-L.png">
                     <div>
                         <h4>Inés Villegoes</h4>
                         <dl>
@@ -143,6 +180,15 @@
                         images/carmen-lorenzo-M.png 920w
                         images/carmen-lorenzo-L.png 1280w
                     -->
+                        <img
+                        alt="woman with dark hair and a red shirt looking at the camera"
+                        srcset="
+                        images/carmen-lorenzo-S.png 404w,
+                        images/carmen-lorenzo-M.png 920w,
+                        images/carmen-lorenzo-L.png 1280w
+                        "
+                        sizes="(width < 404px) 404px, (width < 920px) 920px, 1280px"
+                        src="images/carmen-lorenzo-L.png">
                         <div>
                         <h4>Carmen Lorenzo</h4>
                         <dl>
@@ -217,36 +263,44 @@
         <section id="contact-us">
             <h2>Contact Us</h2>
             <span id="required">(*required)</span>
-            <form>
+            <form action="#" method="post" >
                 <div>
-                    <label>First Name<span>*</span></label>
-                    <input>
+                    <label for="fname">First Name<span>*</span></label>
+                    <input id="fname" type="text" required>
                 </div>
                 <div>
-                    <label>Last Name<span>*</span></label>
-                    <input>
+                    <label for="lname">Last Name<span>*</span></label>
+                    <input id="lname" type="text" required>
                 </div>
                 <div>
-                    <label>Email<span>*</span></label>
-                    <input>
+                    <label for="email">Email<span>*</span></label>
+                    <input id="email" type="email" required>
                 </div>
                 <div>
-                    <label>Phone<span>*</span></label>
-                    <input>
+                    <label for="phone">Phone<span>*</span></label>
+                    <input id="phone" type="tel" required>
                 </div>
                 <fieldset id="preferred-contact">
                 <legend>Preferred Contact Method<span>*</span></legend>
                     <div> 
-                        <input>
-                        <label>Email</label>
+                        <input type="radio"
+                        id="methodemail"
+                        name="preferred-contact"
+                        value="email">
+                        <label for="methodemail">Email</label>
                     </div>
                     <div>
-                        <input>
-                        <label>Text</label>
+                        <input type="radio"
+                        id="methodtext"
+                        name="preferred-contact"
+                        value="text">
+                        <label for="methodtext">Text</label>
                     </div>
                     <div>
-                        <input>
-                        <label>Phone</label>
+                        <input type="radio"
+                        id="methodphone"
+                        name="preferred-contact"           value="phone">
+                        <label for="methodphone">Phone</label>
                     </div>
                 </fieldset>
                 <fieldset id="destination">
@@ -275,11 +329,11 @@
                         <option>Flexible</option>
                     </select>
                 </fieldset>
-                <input>
+                <input type="submit" id="submit" value="Submit">
             </form>
         </section>
         <section id="legal">
-            Legal
+            <h2>Legal</h2>
             <small>Copyright 2021 Wonderlust</small>
             <a href="#">Privacy Statement</a>
             <a href="#">Terms of Service</a>
