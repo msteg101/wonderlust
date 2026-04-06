@@ -403,6 +403,19 @@ small {
     color: var(--soft-white);
     font-size: .75em;
 }
+.skip-link {
+    color: var(--deep-navy);
+    background-color: white;
+    font-weight: 700;
+    left: 30%;
+    padding: 20px;
+    position: absolute;
+    transition: transform 0.3s;
+    transform: translateY(-1500%);
+}
+.skip-link:focus-within {
+  transform: translateY(-200%);
+}
 /* ----------------- GLOBAL STYLES (MEDIUM) -----------------*/
 @media screen and (min-width: 920px){
     h1 {
